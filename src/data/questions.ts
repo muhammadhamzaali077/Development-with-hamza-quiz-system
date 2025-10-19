@@ -5,6 +5,33 @@ export interface Question {
   correctAnswer: number;
 }
 
+export interface ShuffledQuestion extends Question {
+  shuffledOptions: string[];
+  correctAnswerIndex: number;
+}
+
+export const shuffleQuestionOptions = (question: Question): ShuffledQuestion => {
+  const optionsWithIndex = question.options.map((option, index) => ({
+    option,
+    isCorrect: index === question.correctAnswer
+  }));
+  
+  // Fisher-Yates shuffle
+  for (let i = optionsWithIndex.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [optionsWithIndex[i], optionsWithIndex[j]] = [optionsWithIndex[j], optionsWithIndex[i]];
+  }
+  
+  const shuffledOptions = optionsWithIndex.map(item => item.option);
+  const correctAnswerIndex = optionsWithIndex.findIndex(item => item.isCorrect);
+  
+  return {
+    ...question,
+    shuffledOptions,
+    correctAnswerIndex
+  };
+}
+
 export const questions: Question[] = [
   {
     id: 1,

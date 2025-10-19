@@ -3,20 +3,26 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { ChevronRight } from "lucide-react";
-import type { Question } from "@/data/questions";
+import type { ShuffledQuestion } from "@/data/questions";
+import QuizTimer from "./QuizTimer";
+import logo from "@/assets/logo.png";
 
 interface QuizQuestionProps {
-  question: Question;
+  question: ShuffledQuestion;
   currentQuestion: number;
   totalQuestions: number;
   onNext: (selectedAnswer: number) => void;
+  timerDuration: number;
+  onTimeUp: () => void;
 }
 
 const QuizQuestion = ({ 
   question, 
   currentQuestion, 
   totalQuestions, 
-  onNext 
+  onNext,
+  timerDuration,
+  onTimeUp
 }: QuizQuestionProps) => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   
@@ -32,6 +38,12 @@ const QuizQuestion = ({
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <Card className="w-full max-w-3xl p-6 md:p-8 space-y-6 shadow-2xl">
+        {/* Header with Logo and Timer */}
+        <div className="flex items-center justify-between border-b border-border pb-4">
+          <img src={logo} alt="Logo" className="w-12 h-12 object-contain" />
+          <QuizTimer duration={timerDuration} onTimeUp={onTimeUp} />
+        </div>
+
         {/* Progress Section */}
         <div className="space-y-2">
           <div className="flex justify-between text-sm font-medium">
@@ -54,7 +66,7 @@ const QuizQuestion = ({
 
         {/* Options */}
         <div className="space-y-3">
-          {question.options.map((option, index) => (
+          {question.shuffledOptions.map((option, index) => (
             <button
               key={index}
               onClick={() => setSelectedOption(index)}

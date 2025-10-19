@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Brain } from "lucide-react";
+import { Clock } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 interface QuizStartProps {
   onStart: () => void;
@@ -11,8 +12,8 @@ const QuizStart = ({ onStart, totalQuestions }: QuizStartProps) => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <Card className="w-full max-w-2xl p-8 md:p-12 text-center space-y-6 shadow-2xl">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full gradient-primary mb-4">
-          <Brain className="w-10 h-10 text-white" />
+        <div className="inline-flex items-center justify-center mb-4">
+          <img src={logo} alt="Development with Hamza Logo" className="w-32 h-32 object-contain" />
         </div>
         
         <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
@@ -41,6 +42,14 @@ const QuizStart = ({ onStart, totalQuestions }: QuizStartProps) => {
             <li className="flex items-start">
               <span className="mr-2">•</span>
               <span>No going back to previous questions</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-2">•</span>
+              <span>2.5 hours time limit - quiz auto-submits when time expires</span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-2">•</span>
+              <span>Unanswered questions will be marked incorrect</span>
             </li>
             <li className="flex items-start">
               <span className="mr-2">•</span>
