@@ -227,9 +227,9 @@ export const questions: Question[] = [
   },
   {
     id: 33,
-    question: "What is Flexbox in CSS?",
-    options: ["A layout model", "A JavaScript library", "A color scheme", "A font family"],
-    correctAnswer: 0
+    question: "In the example code, what does with trace('Joke workflow'): do?",
+    options: ["It runs the agent twice but skips the second call.", "It prints the joke output without any rating step.", "It adds a new agent named 'Joke workflow' for prompting.", "It wraps the runs in a trace to log the whole 'Joke workflow' steps."],
+    correctAnswer: 3
   },
   {
     id: 34,
