@@ -161,8 +161,8 @@ export const questions: Question[] = [
   },
   {
     id: 22,
-    question: "Which symbol is used for single-line comments in JavaScript?",
-    options: ["//", "/*", "#", "<!--"],
+    question: "In Pydantic code: class User(BaseModel): age: int = Field(ge=18), what does ge=18 do?",
+    options: ["Ensures age >= 18", "Sets default to 18*", "Ignores age", "Converts to string"],
     correctAnswer: 0
   },
   {
