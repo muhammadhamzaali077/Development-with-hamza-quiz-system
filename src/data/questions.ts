@@ -407,7 +407,7 @@ export const questions: Question[] = [
   },
   {
     id: 63,
-    question: "In Pydantic, what happens with invalid data in: class Resp(BaseModel): age: int if age="20"?",
+    question: "In Pydantic, what happens with invalid data in: class Resp(BaseModel): age: int if age='20'?",
     options: ["Converts to int", "Ignores the field", "Raises ValidationError", "Logs warning"],
     correctAnswer: 1
   },
