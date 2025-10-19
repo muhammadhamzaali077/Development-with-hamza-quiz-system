@@ -21,7 +21,7 @@ const QuizStart = ({ onStart, totalQuestions }: QuizStartProps) => {
         </h1>
         
         <p className="text-xl text-muted-foreground">
-          Test your web development knowledge
+          Test your OpenAI Agents SDK knowledge
         </p>
         
         <div className="bg-secondary/50 rounded-lg p-6 space-y-3">
