@@ -45,7 +45,7 @@ const QuizStart = ({ onStart, totalQuestions }: QuizStartProps) => {
             </li>
             <li className="flex items-start">
               <span className="mr-2">•</span>
-              <span>2.5 hours time limit - quiz auto-submits when time expires</span>
+              <span>2 hours time limit - quiz auto-submits when time expires</span>
             </li>
             <li className="flex items-start">
               <span className="mr-2">•</span>
